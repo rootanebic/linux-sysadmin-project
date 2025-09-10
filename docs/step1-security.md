@@ -1,7 +1,7 @@
-# I used Unstalled Ubuntu server with a minimal configuration, if you have installed normal, ignore dependencies below
-# install dependencies
-# inetutils-ping
-# dialog
+I installed Ubuntu server with a minimal configuration, if you have installed normal, ignore dependencies below
+install dependencies
+inetutils-ping
+dialog
 
 sudo apt update
 sudo apt install inetutils-ping -y
