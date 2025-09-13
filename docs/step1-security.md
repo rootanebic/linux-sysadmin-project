@@ -1,13 +1,14 @@
-I installed Ubuntu server with a minimal configuration, if you have installed normal, ignore dependencies below
-install dependencies
-inetutils-ping
-dialog
+# Update and Upgrade System
+sudo apt update && sudo apt upgrade -y
 
-sudo apt update
-sudo apt install inetutils-ping -y
-sudo apt isntall dialog -y
-inetutils-ping
+# Install unattended upgrades and set defaults non-interactivly 
+sudo apt install unattended-upgrades -y
+sudo dpkg-reconfigure -f noninteractive unattended-upgrades
 
+
+# Install dependencies
+
+sudo apt install -y inetutils-ping dialog inetutils-ping ufw rsyslog
 
 
 # --- Set, check static IP addresses ---
@@ -35,9 +36,55 @@ ping -c 4 google.com
 
 ![Ping test result](screenshots/ping-test.png)
 
-# Update and Upgrade System
-sudo apt update && sudo apt upgrade -y
+# Create user with a Sudo privileges:
+sudo adduser adminuser
+sudo usermod -aG sudo adminuser
 
-# Install unattended upgrades and set defaults non-interactivly 
-sudo apt install unattended-upgrades -y
-sudo dpkg-reconfigure -f noninteractive unattended-upgrades
+
+#Set up SSH key authentication:
+ssh-keygen -t ed25519 -f ~/.ssh/mykey
+ssh-copy-id -i mykey.pub adminuser@192.168.1.222
+
+#Harden SSH (/etc/ssh/sshd_config):
+Disable root login (PermitRootLogin no)
+Disable password login (PasswordAuthentication no, after key setup)
+
+
+#Restart service:
+sudo systemctl restart sshd
+
+# Firewall Configuration
+sudo ufw default deny incoming
+sudo ufw default allow outgoing
+sudo ufw allow ssh
+sudo ufw enable
+sudo ufw status
+
+![Ufw status](screenshots/ufw-status.png)
+
+# Enable ssh loging
+sudo nano /etc/ssh/sshd_config
+SyslogFacility AUTH
+LogLevel INFO
+
+sudo systemctl restart ssh
+
+
+
+# Install & Configure Fail2Ban
+sudo apt install fail2ban -y
+
+sudo nano /etc/fail2ban/jail.local
+
+
+![Jail local conf](screenshots/jail-local.png)
+
+
+
+sudo systemctl enable --now fail2ban
+sudo systemctl status fail2ban
+
+![Fai2lban status](screenshots/failban-status.png)
+
+
+
