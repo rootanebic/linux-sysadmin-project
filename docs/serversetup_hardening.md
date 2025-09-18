@@ -63,18 +63,6 @@ Here’s what my static IP setup looks like:
 
 ![Netplan YAML config](screenshots/netplan-config.png)
 
-```yaml
-network:
-  version: 2
-  ethernets:
-    ens33:
-      dhcp4: no
-      addresses: [192.168.1.222/24]
-      gateway4: 192.168.1.1
-      nameservers:
-        addresses: [8.8.8.8, 8.8.4.4]
-```
-
 ---
 
 ### 4.3 Apply Network Configuration
