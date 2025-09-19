@@ -131,7 +131,7 @@ EXIT;
 ```
 
 ![MySQL Setup](screenshots/mysql-setup.png)
-[MySQL Setup](screenshots/mysql-test-user.png)
+![check user](screenshots/mysql-test-user.png)
 
 ---
 
