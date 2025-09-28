@@ -4,7 +4,7 @@ Hi! In this guide, I'll show you step by step how I automated system maintenance
 
 ---
 
-## 0. Create Dedicated User for Scripts
+## 1. Create Dedicated User for Scripts
 
 Instead of using root or the main user, I created a dedicated user `healthcheck` to run all automation scripts:
 
@@ -19,7 +19,7 @@ This user will own all scripts and run cron jobs for automation tasks, and being
 
 ---
 
-## 1. System Health Check Script
+## 2. System Health Check Script
 
 First, I created the directory for scripts and placed the script inside:
 
