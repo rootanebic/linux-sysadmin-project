@@ -15,7 +15,7 @@ sudo usermod -aG adm healthcheck
 
 This user will own all scripts and run cron jobs for automation tasks, and being in the `adm` group allows it to read system logs like `/var/log/auth.log`.
 
-**Screenshot Placeholder:** ![Create healthcheck user](screenshots/create-healthcheck-user.png)
+![Create healthcheck user](screenshots/create-healthcheck-user.png)
 
 ---
 
@@ -28,7 +28,7 @@ sudo mkdir -p /home/healthcheck/scripts/
 sudo nano /home/healthcheck/scripts/health-check.sh
 ```
 
-Example script with description:
+System healt check script:
 
 ```bash
 #!/bin/bash
@@ -95,7 +95,7 @@ Check logrotate status:
 sudo systemctl status logrotate
 ```
 
-**Screenshot Placeholder:** ![Logrotate Status](screenshots/logrotate-status.png)
+![Logrotate Status](screenshots/logrotate-status.png)
 
 ---
 
@@ -127,14 +127,14 @@ List existing cron jobs:
 sudo -u healthcheck crontab -l
 
 
-**Screenshot Placeholder:** ![List Cron Jobs](screenshots/list-cron-jobs.png)
+![List Cron Jobs](screenshots/list-cron-jobs.png)
 
 
 ## 3. Document Scripts and Example Outputs
 
 All scripts are stored in `/home/healthcheck/scripts/`. Example outputs are saved in `/var/log/health-check.log` and documented for review.
 
-**Screenshot Placeholder:** ![Script Outputs](screenshots/script-outputs.png)
+![Script Outputs](screenshots/script-outputs.png)
 
 ---
 
