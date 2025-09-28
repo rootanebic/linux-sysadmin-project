@@ -125,7 +125,7 @@ List existing cron jobs:
 
 ```bash
 sudo -u healthcheck crontab -l
-
+```
 
 ![List Cron Jobs](screenshots/list-cron-jobs.png)
 
@@ -133,6 +133,7 @@ sudo -u healthcheck crontab -l
 ## 3. Document Scripts and Example Outputs
 
 All scripts are stored in `/home/healthcheck/scripts/`. Example outputs are saved in `/var/log/health-check.log` and documented for review.
+
 
 ![Script Outputs](screenshots/script-outputs.png)
 
