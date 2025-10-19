@@ -142,7 +142,7 @@ NoNewPrivileges=true
 WantedBy=multi-user.target
 ```
 
-!(screenshots/node-exporter-status.png)
+![](screenshots/node-exporter-status.png)
 
 ---
 
