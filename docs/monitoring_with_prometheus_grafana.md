@@ -293,7 +293,7 @@ groups:
     annotations:
       summary: "High requests/sec on {{ $labels.instance }}"
 ```
-
+![](screenshots/alerts_ui.png)
 ---
 
 ## 7. Enable & Start Services
