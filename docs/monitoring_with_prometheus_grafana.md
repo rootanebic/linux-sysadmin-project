@@ -26,7 +26,7 @@ sudo mkdir -p /etc/prometheus /etc/prometheus/rules /var/lib/prometheus
 sudo chown -R prometheus:prometheus /etc/prometheus /var/lib/prometheus
 ```
 
-`screenshots/monitoring-users.png`
+![](screenshots/monitoring-users.png)
 
 ---
 
@@ -108,7 +108,7 @@ WantedBy=multi-user.target
 
 ```
 
-`screenshots/prometheus-status.png`
+![](screenshots/prometheus-status.png)
 
 ---
 
@@ -175,7 +175,7 @@ Verify:
 curl http://127.0.0.1:8080/stub_status
 ```
 
-`screenshots/nginx-stub-status.png`
+![](screenshots/nginx-stub-status.png)
 
 ---
 
@@ -212,7 +212,7 @@ NoNewPrivileges=true
 WantedBy=multi-user.target
 ```
 
-`screenshots/nginx-exporter-status.png`
+![](screenshots/nginx-exporter-status.png)
 
 ---
 
@@ -309,7 +309,7 @@ Verify in Prometheus:
 - Alerts:  `http://localhost:9090/alerts`
 - Graph:   `http://localhost:9090/graph` (try `up`)
 
-`screenshots/prometheus-targets.png`
+![](screenshots/prometheus-targets.png)
 
 ### 7.1 Open required ports with UFW
 
@@ -325,7 +325,7 @@ sudo ufw allow 3000/tcp
 sudo ufw status
 ```
 
-`screenshots/ufw-rules.png`
+![](screenshots/ufw-rules.png)
 
 ---
 
@@ -363,11 +363,9 @@ sudo systemctl restart grafana-server
 - Log in at `http://localhost:3000/` (default `admin` / `admin`)
 - Import dashboards: **Node Exporter Full (ID 1860)** and **NGINX by nginxinc (ID 11199)**
 
-**Screenshot Placeholders:**
-
-- `screenshots/grafana-login.png`
-- `screenshots/grafana-node-exporter-1860.png`
-- `screenshots/grafana-nginx.png`
+  ![](screenshots/grafana-login.png)
+  ![](screenshots/grafana-node-exporter-1860.png)
+  ![](screenshots/grafana-nginx.png)
 
 ---
 
