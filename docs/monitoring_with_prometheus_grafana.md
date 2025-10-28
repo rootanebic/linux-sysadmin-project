@@ -181,7 +181,6 @@ curl http://127.0.0.1:8080/stub_status
 
 ## 5. Install nginx-prometheus-exporter
 
-> The NGINX Prometheus exporter is provided by **nginxinc**.
 
 ```bash
 cd /tmp
