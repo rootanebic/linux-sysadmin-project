@@ -75,6 +75,34 @@ Each step is documented in `/docs` with screenshots and commands I actually ran.
 
 ---
 
+## 🌟 Highlights
+
+<p align="center">
+  <img src="docs/screenshots/ufw-status.png" width="80%" alt="UFW firewall status"><br>
+  <em>Firewall configured and active using UFW for secure inbound traffic control.</em>
+</p>
+
+<p align="center">
+  <img src="docs/screenshots/nginx-vhost.png" width="80%" alt="Nginx virtual host setup"><br>
+  <em>Nginx virtual host configured with local HTTPS and static site deployment.</em>
+</p>
+
+<p align="center">
+  <img src="docs/screenshots/prometheus-targets.png" width="80%" alt="Prometheus monitoring targets"><br>
+  <em>Prometheus successfully scraping system and NGINX exporters for live metrics.</em>
+</p>
+
+<p align="center">
+  <img src="docs/screenshots/grafana-node-exporter-1860.png" width="80%" alt="Grafana system dashboard"><br>
+  <em>Grafana dashboard visualizing CPU, memory, and disk usage in real time.</em>
+</p>
+
+<p align="center">
+  <img src="docs/screenshots/restore-test.png" width="80%" alt="Backup restore test"><br>
+  <em>Disaster recovery validated by restoring backup on a test system.</em>
+</p>
+
+
 ## About Me
 
 **Amel Nebic** — Linux, automation, and practical monitoring.  
