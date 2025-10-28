@@ -1,0 +1,31 @@
+groups:
+- name: host-health
+  rules:
+  - alert: InstanceDown
+    expr: up == 0
+    for: 5m
+    labels: { severity: critical }
+    annotations:
+      summary: "Instance {{ $labels.instance }} down"
+      description: "Target unreachable for 5 minutes."
+  - alert: HostHighCPU
+    expr: (1 - avg by (instance) (rate(node_cpu_seconds_total{mode="idle"}[5m]))) * 100 > 85
+    for: 10m
+    labels: { severity: warning }
+    annotations:
+      summary: "High CPU on {{ $labels.instance }}"
+      description: "CPU > 85% for 10 minutes."
+  - alert: HostLowMemory
+    expr: (node_memory_MemAvailable_bytes / node_memory_MemTotal_bytes) * 100 < 10
+    for: 10m
+    labels: { severity: warning }
+    annotations:
+      summary: "Low memory on {{ $labels.instance }}"
+      description: "Available RAM < 10%."
+  - alert: HostDiskSpaceLow
+    expr: 100 * (node_filesystem_avail_bytes{fstype!~"tmpfs|overlay|squashfs"} / node_filesystem_size_bytes{fstype!~"tmpfs|overlay|squashfs"}) < 10
+    for: 10m
+    labels: { severity: warning }
+    annotations:
+      summary: "Low disk on {{ $labels.instance }} ({{ $labels.mountpoint }})"
+      description: "Free space < 10%."

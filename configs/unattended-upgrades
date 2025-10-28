@@ -1,7 +1,0 @@
-# Update & upgrade system
-sudo apt update && sudo apt upgrade -y
-
-# Enable autoamtic security updates
-sudo apt install unattended-upgrades -y
-sudo dpkg-reconfigure -f noninteractive unattended-upgrades
-

@@ -1,0 +1,2 @@
+# Cleanup old backups older than 7 days
+0 3 * * * find /backups -mindepth 1 -mtime +7 -exec rm -rf {} \; 2>&1 | tee -a /var/log/backup_cleanup.log > /dev/null

@@ -1,0 +1,8 @@
+/var/log/health-check.log {
+    daily
+    rotate 14
+    compress
+    missingok
+    notifempty
+    create 640 healthcheck adm
+}

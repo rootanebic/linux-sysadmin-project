@@ -1,0 +1,27 @@
+groups:
+- name: nginx-health
+  rules:
+  - alert: NginxExporterDown
+    expr: up{job="nginx_exporter"} == 0
+    for: 2m
+    labels: { severity: critical }
+    annotations:
+      summary: "NGINX exporter down on {{ $labels.instance }}"
+  - alert: NginxScrapeFailing
+    expr: nginx_up == 0
+    for: 2m
+    labels: { severity: critical }
+    annotations:
+      summary: "NGINX scrape failing on {{ $labels.instance }}"
+  - alert: NginxHighActiveConnections
+    expr: nginx_connections_active > 500
+    for: 5m
+    labels: { severity: warning }
+    annotations:
+      summary: "High active connections on {{ $labels.instance }}"
+  - alert: NginxHighRPS
+    expr: rate(nginx_http_requests_total[5m]) > 2000
+    for: 5m
+    labels: { severity: warning }
+    annotations:
+      summary: "High requests/sec on {{ $labels.instance }}"

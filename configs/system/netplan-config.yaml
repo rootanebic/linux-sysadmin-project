@@ -1,11 +1,12 @@
+# /etc/netplan/00-installer-config.yaml
+# Example static IP configuration for Ubuntu Server
+
 network:
   version: 2
   renderer: networkd
   ethernets:
-    enp0s3:       # Replace with your interface name
-      dhcp4: no
-      addresses:
-        - 192.168.1.222/24
+    ens33:
+      addresses: [192.168.1.222/24]
       gateway4: 192.168.1.1
       nameservers:
         addresses: [8.8.8.8, 1.1.1.1]
