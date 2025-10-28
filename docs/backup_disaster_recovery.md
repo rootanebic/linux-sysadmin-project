@@ -1,4 +1,4 @@
-# Step 6: Backup & Disaster Recovery
+# Step 5: Backup & Disaster Recovery
 
 Hi! In this guide, I’ll show you how I created a simple but reliable backup and disaster recovery setup on my Ubuntu server.  
 The goal was to make sure that even if something goes wrong — I can restore my system fast and with minimal data loss.
