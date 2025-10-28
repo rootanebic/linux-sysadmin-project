@@ -35,7 +35,7 @@ Each step is documented in `/docs` with screenshots and commands I actually ran.
 
 ---
 
-## Repo layout (short)
+## Repo layout
 
 ```
 .
@@ -61,7 +61,7 @@ Each step is documented in `/docs` with screenshots and commands I actually ran.
 ### Fail2Ban
 - `configs/fail2ban/jail.local` – basic SSH protection with UFW actions.
 
-### Logrotate (custom)
+### Logrotate 
 - `configs/logrotate/healthcheck` – rotates `/var/log/health-check.log` from my tiny script.
 
 ---
